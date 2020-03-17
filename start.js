@@ -33,12 +33,12 @@ const start = async () => {
     if (startParam.path) {
       url += `/${startParam.path}`
     }
-  
+
     const query = querystring.stringify(startParam.query);
     if (query) {
       url += `?${query}`;
     }
-  
+
     return {
       url,
       port
@@ -58,7 +58,7 @@ const start = async () => {
 
   // set devServerOption
   const devServerOption = {
-    publicPath: webpackDevConfig.output.publicPath,
+    publicPath: webpackDevConfig[0].output.publicPath,
     hot: true,
     compress: true,
     disableHostCheck: true,
