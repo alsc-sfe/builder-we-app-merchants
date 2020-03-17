@@ -3,12 +3,13 @@
 const BUILD_PATH = require('./util/const').BUILD_PATH;
 const ASSETS_URL = require('./util/const').ASSETS_URL;
 
-module.exports = function () {
+module.exports = function (config = {}) {
   return {
     mode: "production",
     // mode: "development",
-    entry: {},
+    entry: config.entry || {},
     output: {
+      ...config.output,
       path: BUILD_PATH,
       publicPath: ASSETS_URL,
       filename: '[name].js',
