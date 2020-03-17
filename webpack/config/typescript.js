@@ -1,8 +1,8 @@
 'use strict';
 const { resolve } = require;
-const babelLoader = require('./babel');
+const getBabel = require('./getBabel');
 
-module.exports = function (config) {
+module.exports = function (config, entry) {
 
   config.module = config.module || {};
   config.module.rules = config.module.rules || [];
@@ -13,7 +13,7 @@ module.exports = function (config) {
     exclude: /node_modules/,
     // exclude: /node_modules[\\/](?!(saas-biz-pc)[\\/]).*/,
     use: [
-      babelLoader,
+      getBabel(entry),
       {
         loader: resolve('ts-loader'),
         options: { transpileOnly: true }

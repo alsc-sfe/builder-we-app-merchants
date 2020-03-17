@@ -1,7 +1,7 @@
 'use strict';
-const babelLoader = require('./babel');
+const getBabel = require('./getBabel');
 
-module.exports = function (config) {
+module.exports = function (config, entry) {
 
   config.module = config.module || {};
   config.module.rules = config.module.rules || [];
@@ -13,7 +13,7 @@ module.exports = function (config) {
     use: [
       require.resolve('thread-loader'),
       require.resolve('cache-loader'),
-      babelLoader,
+      getBabel(entry),
     ]
   };
 

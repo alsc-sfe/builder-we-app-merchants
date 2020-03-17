@@ -28,11 +28,11 @@ const configs = entries.map((config) => {
   // webpack.resolve
   applyResolveConfig(baseConfig);
   // system module
-  // applySystemModuleConfig(baseConfig);
+  applySystemModuleConfig(baseConfig, config);
   // ts/tsx
-  applyTsConfig(baseConfig);
+  applyTsConfig(baseConfig, config);
   // js/jsx
-  applyJsConfig(baseConfig);
+  applyJsConfig(baseConfig, config);
   // html模板替换
   applyHtmlConfig(baseConfig);
   // 图片 loader

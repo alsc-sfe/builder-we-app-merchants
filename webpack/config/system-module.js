@@ -1,9 +1,7 @@
 'use strict';
 
-const { isWeAppHost } = require('../util/appType');
-
-module.exports = function (config) {
-  if (isWeAppHost) {
+module.exports = function (config, entryConfig) {
+  if (!entryConfig.entry['app-config']) {
     return;
   }
 
