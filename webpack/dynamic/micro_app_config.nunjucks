@@ -1,0 +1,6 @@
+export default {
+  name: '{{ appName }}',
+  basename: '{{ basename }}',
+  pages: {{ modules }},
+  version: '{{ version }}',
+};
