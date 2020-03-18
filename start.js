@@ -51,7 +51,7 @@ const start = async () => {
   let hasCompile = false;
   compiler.plugin('done', async stats => {
     if (!stats.hasErrors() && !hasCompile) {
-      open(startParam.url);
+      // open(startParam.url);
       hasCompile = true;
     }
   });
