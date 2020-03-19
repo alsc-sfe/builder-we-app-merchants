@@ -55,7 +55,7 @@ module.exports = function (config, argv) {
   config.plugins = config.plugins || [];
 
   const cssOptions = {
-    modules: true,
+    modules: false,
     localIdentName: `${CSS_SCOPE}_[path][local]_[hash:base64:5]`,
     context: 'src',
     sourceMap: true

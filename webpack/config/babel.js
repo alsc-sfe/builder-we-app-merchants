@@ -43,19 +43,19 @@ module.exports = {
         libraryDirectory: 'es',
         style: true,
       }, 'choice-cbm'],
-      resolve('@saasfe/babel-plugin-react-css-module-transformer'),
-      [resolve('babel-plugin-react-css-modules'), {
-        context: 'src',
-        generateScopedName: `${CSS_SCOPE}_[path][local]_[hash:base64:5]`,
-        webpackHotModuleReloading: true,
-        handleMissingStyleName: 'warn',
-        filetypes: {
-          ".less": {
-            "syntax": "postcss-less"
-          }
-        },
-        autoResolveMultipleImports: true
-      }]
+      // resolve('@saasfe/babel-plugin-react-css-module-transformer'),
+      // [resolve('babel-plugin-react-css-modules'), {
+      //   context: 'src',
+      //   generateScopedName: `${CSS_SCOPE}_[path][local]_[hash:base64:5]`,
+      //   webpackHotModuleReloading: true,
+      //   handleMissingStyleName: 'warn',
+      //   filetypes: {
+      //     ".less": {
+      //       "syntax": "postcss-less"
+      //     }
+      //   },
+      //   autoResolveMultipleImports: true
+      // }]
     ],
   }
 }
