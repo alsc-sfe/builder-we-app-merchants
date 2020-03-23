@@ -50,6 +50,8 @@ const configs = entries.map((config) => {
 
   // 业务自定义配置
   baseConfig = resolveAppConfig(baseConfig);
+
+  return baseConfig;
 });
 
 module.exports = configs;
