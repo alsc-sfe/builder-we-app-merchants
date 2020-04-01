@@ -10,18 +10,11 @@ module.exports = function (config) {
   config.module.rules = config.module.rules || [];
 
   let imageModuleRule = [{
-    test: /\.(png|jpe?g|gif|svg|eot|ttf|woff)(\?.*)?$/,
-    oneOf: [
-      {
-        loader: 'url-loader',
-        options: {
-          limit: 1024 * 20, // 20kb
-        },
-      },
-      {
-        loader: 'file-loader',
-      },
-    ],
+    test: /\.svg(\?.*)?$/,
+    loader: 'url-loader?limit=500000&minetype=image/svg+xml',
+  }, {
+    test: /\.(png|jpg|jpeg|gif|eot|ttf|woff)(\?.*)?$/i,
+    loader: 'url-loader?limit=500000',
   }];
 
   config.module.rules = config.module.rules.concat(imageModuleRule);
