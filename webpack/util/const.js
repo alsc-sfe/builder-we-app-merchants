@@ -45,8 +45,8 @@ if (BUILD_ENV === 'cloud' && !KOS_PUBLISH_ENV) {
 // 获取发布环境（daily、prod）
 // PUBLISH_ENV = argv.kos_publish_env;
 const PUBLISH_ENV = KOS_PUBLISH_ENV;
-const CDN_BASE_DAILY = '//cdn-dev.choicesaas.cn';
-const CDN_BASE_PROD = '//cdn.choicesaas.cn';
+const CDN_BASE_DAILY = 'https://cdn-dev.choicesaas.cn';
+const CDN_BASE_PROD = 'https://cdn.choicesaas.cn';
 let CDN_BASE = PUBLISH_ENV === 'prod' ? CDN_BASE_PROD : CDN_BASE_DAILY;
 
 // 根据构建环境设置ASSETS_URL，ASSETS_URL作为静态资源的基础路径
