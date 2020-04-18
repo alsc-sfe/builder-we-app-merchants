@@ -98,6 +98,8 @@ module.exports = function (config, argv) {
 
     reactUrl,
     reactDOMUrl,
+
+    reactVersion,
   }));
 
   if (PUBLISH_ENV === 'local' || isWeAppHost) {
