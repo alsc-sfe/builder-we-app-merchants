@@ -7,6 +7,7 @@ const build = async () => {
       console.log(stats);
       console.log(err);
       console.log("构建过程出错！");
+      throw("构建过程出错！", err, stats);
     } else {
       console.log("构建成功！");
     }    
