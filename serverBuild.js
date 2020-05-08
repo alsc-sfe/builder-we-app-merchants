@@ -15,7 +15,10 @@ const start = (opts) => {
     }
   });
 
-  child.on('exit', code => code && process.exit(code));
+  child.on('exit', code => {
+    // 子进程的退出状态继续下来往外抛出
+    code && process.exit(code);
+  });
 };
 
 module.exports = start;
