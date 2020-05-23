@@ -56,7 +56,7 @@ module.exports = function (startupParam) {
         [chunkName]: resolveEntry.concat(entryValue),
       },
       output: {
-        library: `__weapp__${microAppName.replace(/-/g, '_')}__${chunkName}`,
+        library: `__weapp__${microAppName.replace(/-/g, '_')}__${chunkName.replace(/-/g, '_')}`,
       },
     };
 
