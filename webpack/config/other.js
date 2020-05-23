@@ -10,11 +10,7 @@ const { ROOT_PATH, SAAS_CONFIG, ASSETS_URL, CDN_BASE } = require('../util/const'
 
 const microAppName = get(SAAS_CONFIG, 'microAppName', '');
 
-const defineProcess = {
-  env: {
-    PUBLIC_URL: `${CDN_BASE}/web/dist`,
-  },
-};
+const PUBLIC_URL = `${CDN_BASE}/web/dist`;
 
 module.exports = function(config){
   config.plugins = config.plugins || [];
@@ -25,9 +21,9 @@ module.exports = function(config){
     'MICRO_APPNAME': JSON.stringify(microAppName),
     'PUBLIC_PATH': JSON.stringify(ASSETS_URL),
     // 用于bwip-fonts
-    process: JSON.stringify(defineProcess),
-    'process.env': JSON.stringify(defineProcess.env),
-    'process.env.PUBLIC_URL': JSON.stringify(defineProcess.env.PUBLIC_URL),
+    'typeof process': JSON.stringify('object'),
+    'typeof process.env': JSON.stringify('object'),
+    'process.env.PUBLIC_URL': JSON.stringify(PUBLIC_URL),
   }));
   config.plugins.push(new MiniCssExtractPlugin());
 };
