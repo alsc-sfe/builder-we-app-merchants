@@ -51,6 +51,10 @@ module.exports = (config) => {
           libraryDirectory: 'es',
           style: true,
         }, 'choice-cbm'],
+        [resolve('babel-plugin-import'), {
+          libraryName: 'antd',
+          style: true,
+        }, 'antd'],
         // resolve('@saasfe/babel-plugin-react-css-module-transformer'),
         // [resolve('babel-plugin-react-css-modules'), {
         //   context: 'src',
