@@ -85,9 +85,9 @@ module.exports = function (startupParam) {
 
     const filePath = `${PUBLIC_PATH}${item.module}`;
     if (version) {
-      page.url = [`${filePath}.js?t=${version}`, `${filePath}.css?t=${version}`];
+      page.url = [`${filePath}.css?t=${version}`, `${filePath}.js?t=${version}`];
     } else {
-      page.url = [`${filePath}.js`, `${filePath}.css`];
+      page.url = [`${filePath}.css`, `${filePath}.js`];
     }
 
     pagesNew.push(page);
